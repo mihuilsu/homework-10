@@ -1,0 +1,11 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+.header {
+  padding: 67px 30px 141px;
+  background-color: $color-light;
+
+  @include respond(lg) {
+    padding: 50px 30px 150px;
+  }
+}

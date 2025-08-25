@@ -1,0 +1,10 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+.container {
+  @include container($container-primary);
+}
+
+.container-sm {
+  @include container($container-sm);
+}

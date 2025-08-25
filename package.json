@@ -1,0 +1,23 @@
+{
+  "name": "homework-11",
+  "version": "1.0.0",
+  "description": "Simple site with SCSS and Gulp build",
+  "main": "index.js",
+  "scripts": {
+    "start": "gulp",
+    "build": "gulp build"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "autoprefixer": "^10.4.20",
+    "browser-sync": "^3.0.4",
+    "cssnano": "^6.1.2",
+    "gulp": "^5.0.1",
+    "gulp-postcss": "^9.0.1",
+    "gulp-sass": "^6.0.1",
+    "gulp-sourcemaps": "^2.6.5",
+    "sass": "^1.90.0"
+  }
+}
