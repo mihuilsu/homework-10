@@ -1,0 +1,52 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  max-width: 540px;
+  text-align: left;
+
+  &__title {
+    margin: 0 0 44px;
+
+    @include respond(lg) { font-size: 2.5rem; }
+    @include respond(md) { font-size: 2rem; }
+    @include respond(xs) { font-size: 1.8rem; }
+  }
+
+  &__description {
+    margin-bottom: 56px;
+    color: $color-secondary;
+
+    @include respond(lg) { font-size: 1rem; }
+    @include respond(sm) { font-size: 0.9rem; }
+    @include respond(xs) { font-size: 0.85rem; }
+  }
+
+  &__button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5em;
+    background-color: $color-primary;
+    color: $color-white;
+    letter-spacing: $letter-spacing;
+    min-width: 225px;
+    min-height: 65px;
+    text-transform: uppercase;
+
+    @include respond(sm) {
+      min-width: 180px;
+      min-height: 50px;
+      font-size: 0.9rem;
+    }
+  }
+
+  @include respond(lg) {
+    max-width: 100%;
+    align-items: center;
+    text-align: center;
+  }
+}

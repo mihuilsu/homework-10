@@ -1,0 +1,22 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+.footer {
+  background-color: $color-primary;
+  color: $color-white;
+  padding: 50px 0;
+
+  &__title {
+    font-size: 1.3125rem;
+    font-weight: $font-weight-medium;
+    margin-bottom: 5px;
+  }
+
+  &__description {
+    font-size: 0.8125rem;
+  }
+
+  @include respond(lg) {
+    text-align: center;
+  }
+}

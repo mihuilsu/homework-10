@@ -1,0 +1,30 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+.section {
+  padding-top: 110px;
+  padding-bottom: 90px;
+  text-align: center;
+
+  &__title {
+    font-weight: $font-weight-medium;
+    line-height: $line-height-sm;
+    margin-bottom: 40px;
+  }
+
+  &__description {
+    color: $color-secondary;
+  }
+
+  @include respond(sm) {
+    padding: 60px 0;
+  }
+}
+
+.about {
+  background-color: $color-white;
+}
+
+.process {
+  background-color: $color-light;
+}

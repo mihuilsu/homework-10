@@ -1,0 +1,114 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+.navbar {
+  margin-bottom: 144px;
+
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: $gap-sm $gap-md;
+    margin-left: -$gap-sm;
+  }
+
+  &__link {
+    position: relative;
+    display: block;
+    letter-spacing: $letter-spacing;
+    padding: $gap-sm;
+    text-transform: uppercase;
+
+    &--active {
+      color: $color-primary;
+      font-weight: $font-weight-medium;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: -$gap-sm;
+      right: -$gap-sm;
+      height: 3px;
+      background-color: $color-primary;
+      border-radius: 3px;
+      transform: scaleX(0);
+      opacity: 0;
+      transition: all 0.3s ease-out;
+    }
+
+    &:hover::after {
+      transform: scaleX(1);
+      opacity: 1;
+    }
+  }
+
+  @include respond(md) {
+    &__btn {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 6px;
+      width: 30px;
+      height: 25px;
+      cursor: pointer;
+      position: relative;
+      z-index: 20;
+
+      &-row {
+        width: 100%;
+        height: 3px;
+        background: $color-black;
+        border-radius: 2px;
+        transition: transform 0.3s ease, opacity 0.3s ease;
+      }
+    }
+
+    &.active {
+      .navbar__btn-row:nth-child(1) {
+        transform: translateY(9px) rotate(45deg);
+      }
+      .navbar__btn-row:nth-child(2) {
+        opacity: 0;
+      }
+      .navbar__btn-row:nth-child(3) {
+        transform: translateY(-9px) rotate(-45deg);
+      }
+
+      .navbar__list {
+        display: flex;
+        animation: slideIn 0.3s ease-out;
+      }
+    }
+
+    &__list {
+      display: none;
+      flex-direction: column;
+      gap: $gap;
+      position: fixed;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      width: 70%;
+      max-width: 300px;
+      background: $color-light;
+      padding: 60px $gap;
+      box-shadow: -2px 0 10px rgba(0, 0, 0, 0.2);
+      z-index: 15;
+      overflow-y: auto;
+    }
+  }
+}
+
+.overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 10;
+
+  &.active {
+    display: block;
+  }
+}
