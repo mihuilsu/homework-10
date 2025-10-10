@@ -2,10 +2,10 @@
 @use '../abstracts/mixins' as *;
 
 .header {
-  padding: 67px 0 141px;
+  padding-block: 67px 141px;
   background-color: $color-light;
 
   @include respond(lg) {
-    padding: 50px 0 150px;
+    padding-block: 50px 150px;
   }
 }

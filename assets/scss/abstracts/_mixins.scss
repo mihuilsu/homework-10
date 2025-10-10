@@ -4,19 +4,39 @@
 @mixin container($max-width) {
   width: min(100% - $gap-lg, $max-width);
   margin-inline: auto;
+  padding-inline: $gap-lg;
+
+  @include respond(md) {
+    padding-inline: $gap-md;
+  }
+
+  @include respond(sm) {
+    padding-inline: $gap-sm;
+  }
 }
 
 @mixin respond($breakpoint) {
-  @if $breakpoint == lg {
-    @media (max-width: 1024px) { @content; }
+  @if $breakpoint ==lg {
+    @media (max-width: 1024px) {
+      @content;
+    }
   }
-  @else if $breakpoint == md {
-    @media (max-width: 768px) { @content; }
+
+  @else if $breakpoint ==md {
+    @media (max-width: 768px) {
+      @content;
+    }
   }
-  @else if $breakpoint == sm {
-    @media (max-width: 480px) { @content; }
+
+  @else if $breakpoint ==sm {
+    @media (max-width: 480px) {
+      @content;
+    }
   }
-  @else if $breakpoint == xs {
-    @media (max-width: 375px) { @content; }
+
+  @else if $breakpoint ==xs {
+    @media (max-width: 375px) {
+      @content;
+    }
   }
 }
